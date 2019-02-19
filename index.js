@@ -36,7 +36,7 @@ module.exports = function (src, opts, fn) {
             
             var child = node[key];
             if (isArray(child)) {
-                forEach(child, function (c) {
+                forEach(child.slice().reverse(), function (c) {
                     if (c && typeof c.type === 'string') {
                         walk(c, node);
                     }
